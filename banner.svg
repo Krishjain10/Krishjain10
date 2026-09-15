@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 160" width="900" height="160">
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#161b22" stroke-width="0.5"/>
+    </pattern>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <linearGradient id="pathFade" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d4aa" stop-opacity="0.1"/>
+      <stop offset="30%" stop-color="#00d4aa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#00d4aa" stop-opacity="0.15"/>
+    </linearGradient>
+    <radialGradient id="radarGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d4aa" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00d4aa" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="160" fill="#0d1117"/>
+  <rect width="900" height="160" fill="url(#grid)"/>
+
+  <!-- Radar system — top right -->
+  <circle cx="810" cy="80" r="90" fill="url(#radarGlow)"/>
+  <circle cx="810" cy="80" r="30" fill="none" stroke="#00d4aa" stroke-opacity="0.1" stroke-width="0.8"/>
+  <circle cx="810" cy="80" r="55" fill="none" stroke="#00d4aa" stroke-opacity="0.07" stroke-width="0.8"/>
+  <circle cx="810" cy="80" r="80" fill="none" stroke="#00d4aa" stroke-opacity="0.05" stroke-width="0.8"/>
+  <line x1="810" y1="80" x2="870" y2="45" stroke="#00d4aa" stroke-opacity="0.2" stroke-width="1"/>
+  <!-- Radar blip -->
+  <circle cx="845" cy="58" r="2.5" fill="#00d4aa" opacity="0.5"/>
+
+  <!-- Flight path — curves across banner -->
+  <path d="M 20 130 C 100 50, 200 40, 300 75 S 450 30, 550 55 S 680 90, 770 80"
+        fill="none" stroke="url(#pathFade)" stroke-width="1.5"
+        stroke-dasharray="8,5" filter="url(#glow)"/>
+
+  <!-- Waypoints along flight path -->
+  <circle cx="20"  cy="130" r="2.5" fill="#00d4aa" opacity="0.35"/>
+  <circle cx="300" cy="75"  r="3"   fill="#00d4aa" opacity="0.45"/>
+  <circle cx="550" cy="55"  r="3"   fill="#00d4aa" opacity="0.45"/>
+
+  <!-- Drone icon at path end -->
+  <g transform="translate(770, 80) rotate(-10)" opacity="0.55">
+    <line x1="-9" y1="0" x2="9" y2="0" stroke="#00d4aa" stroke-width="1.5"/>
+    <line x1="0" y1="-7" x2="0" y2="7" stroke="#00d4aa" stroke-width="1.5"/>
+    <circle cx="-9" cy="-7" r="2.5" fill="none" stroke="#00d4aa" stroke-width="0.8"/>
+    <circle cx="9"  cy="-7" r="2.5" fill="none" stroke="#00d4aa" stroke-width="0.8"/>
+    <circle cx="-9" cy="7"  r="2.5" fill="none" stroke="#00d4aa" stroke-width="0.8"/>
+    <circle cx="9"  cy="7"  r="2.5" fill="none" stroke="#00d4aa" stroke-width="0.8"/>
+    <circle cx="0"  cy="0"  r="1.5" fill="#00d4aa" opacity="0.6"/>
+  </g>
+
+  <!-- Terminal prompt accent -->
+  <text x="38" y="62" font-family="'Courier New', 'SF Mono', monospace" font-size="26" fill="#00d4aa" opacity="0.6">▸</text>
+
+  <!-- Name -->
+  <text x="62" y="62" font-family="'Courier New', 'SF Mono', 'Fira Code', monospace"
+        font-size="28" font-weight="bold" fill="#e6edf3" letter-spacing="3">KRISH JAIN</text>
+
+  <!-- Tagline -->
+  <text x="62" y="90" font-family="'Courier New', 'SF Mono', 'Fira Code', monospace"
+        font-size="11" fill="#8b949e" letter-spacing="0.8">AI/Software Engineer — RAG systems, autonomous drones, and agents that don't guess at math.</text>
+
+  <!-- Bottom accent line -->
+  <line x1="62" y1="108" x2="580" y2="108" stroke="#00d4aa" stroke-opacity="0.12" stroke-width="1"/>
+
+  <!-- Coordinates readout — bottom left -->
+  <text x="62" y="140" font-family="'Courier New', monospace" font-size="9" fill="#484f58" letter-spacing="1">
+    SYS:ONLINE · EVAL:PASS · GUARDRAILS:ARMED
+  </text>
+</svg>
