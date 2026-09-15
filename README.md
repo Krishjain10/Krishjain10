@@ -20,16 +20,6 @@ I lead **Team Avion**, a 6-person drone team that placed **AIR 1 at SAE India Na
 
 ---
 
-### How I Build
-
-> **I don't let LLMs do the math.** If there's a number in the output, a deterministic tool produced it — the model only explains.
-
-> **PII never reaches the model raw.** Sensitive data is tokenized before the LLM sees anything; a second guard layer catches what the first misses.
-
-> **Structure over tokens.** Code gets parsed by AST, not split by character count. Audio stays on-device when privacy matters.
-
----
-
 ### The Arc So Far
 
 ```mermaid
@@ -72,7 +62,7 @@ timeline
 
 | | |
 |:--|:--|
-| **Languages** | Python · Swift · TypeScript · JavaScript · Dart |
+| **Languages** | Python · Swift · TypeScript · JavaScript |
 | **AI / ML** | LangGraph · LangChain · Groq · ChromaDB · sentence-transformers · Tree-sitter · WhisperKit |
 | **Backend** | FastAPI · NestJS · WebSockets · Supabase |
 | **Robotics** | MAVLink · pymavlink · Pixhawk · ArduPilot |
